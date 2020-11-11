@@ -36,7 +36,7 @@ for (let variable in arrayObjCopia) {
   arrayObjCopia[variable].position = min; // dichiaro una proprietà
 }
 console.log("aggiungo position",arrayObjCopia);
-arrayObjCopia.forEach((x) => { // stampo con un foreach
-  console.log(` nome: ${element.name} tipo: ${element.type} colore: ${element.color}  position: ${element.position} `);
-});
+// arrayObjCopia.forEach((x) => { // stampo con un foreach
+//   console.log(` nome: ${element.name} tipo: ${element.type} colore: ${element.color}  position: ${element.position} `);
+// });
 //----------------------- FINE JSNACK 3 es6 ---------------------
