@@ -21,7 +21,7 @@ const {nome,cognome,eta} = studente;
 console.log(nome,cognome,eta);
 
 // -------------- ESERCIZIO 1 ------------------
-
+console.log("------------------------------------------");
 // -------------- ESERCIZIO 2 ------------------
 
 // creo array di oggetti
@@ -54,7 +54,7 @@ arrayStudenti.forEach((element) => {
 });
 
 // -------------- ESERCIZIO 2 ------------------
-
+console.log("------------------------------------------");
 // -------------- ESERCIZIO 3 ------------------
 
 // creo un array oggetto e do alle proprieta il valore di quello che inserirà l'utente
@@ -71,6 +71,9 @@ const inserisciStudente = {
 
 };
 
-
+arrayStudenti.forEach((element) => {
+  console.log(` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta}`);
+});
 
 // -------------- ESERCIZIO 3 ------------------
+console.log("------------------------------------------");
