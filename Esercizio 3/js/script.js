@@ -24,8 +24,6 @@ arrayObj.forEach((element) => { // stampo con un foreach
 
 // Creo una copia dell'array originale con l'operatore Spread
 const arrayObjCopia = {...arrayObj};
-console.log("array copiato",arrayObjCopia);
-
 
 // creo array di lettere dell'alfabeto per fare uscire in output una lettera casuale
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -38,4 +36,7 @@ for (let variable in arrayObjCopia) {
   arrayObjCopia[variable].position = min; // dichiaro una proprietà
 }
 console.log("aggiungo position",arrayObjCopia);
+arrayObjCopia.forEach((x) => { // stampo con un foreach
+  console.log(` nome: ${element.name} tipo: ${element.type} colore: ${element.color}  position: ${element.position} `);
+});
 //----------------------- FINE JSNACK 3 es6 ---------------------
