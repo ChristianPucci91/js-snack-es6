@@ -26,4 +26,16 @@ arrayObj.forEach((element) => { // stampo con un foreach
 const arrayObjCopia = {...arrayObj};
 console.log("array copiato",arrayObjCopia);
 
+
+// creo array di lettere dell'alfabeto per fare uscire in output una lettera casuale
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+// ciclo for dove dico in ogni oggetto dell'array creami una proprietà position che sarà uguale a una lettera casuale
+// data dal valore della variabile "min"
+
+for (let variable in arrayObjCopia) {
+  let min = alphabet[Math.floor(Math.random()*alphabet.length)];
+  arrayObjCopia[variable].position = min; // dichiaro una proprietà
+}
+console.log("aggiungo position",arrayObjCopia);
 //----------------------- FINE JSNACK 3 es6 ---------------------
