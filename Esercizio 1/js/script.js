@@ -57,7 +57,7 @@ var ex2 = "";
 
 arrayStudenti.map((element) => {
   console.log(` nome: ${element.nome} cognome : ${element.cognome} eta : ${element.eta} `);
-  ex2 += ( ` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta} <br>` );
+  ex2 += ( `<h3> nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta} <br> </h3>` );
   document.getElementById('ex_2').innerHTML = ex2;
 });
 
@@ -80,14 +80,14 @@ const inserisciStudente = {
 };
 
 // --------- UPDATE 12/11/2020 dichiaro un let unendo i 2 array e stamparli con un for each-----------
-arrayStudenti = [...arrayStudenti,{...inserisciStudente}];
+arrayUnito = [...arrayStudenti,{...inserisciStudente}];
 // console.log(arrayStudenti);
 var ex3 = "";
 // stampo in html con un foureach
-arrayStudenti.forEach((element) => {
+arrayUnito.forEach((element) => {
   console.log(` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta}`);
+  ex3 += ( ` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta} <br>` );
   document.getElementById('ex_3').innerHTML = ex3;
-  ex3 += ( ` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta} <br>` + `${nuovoNome}`   );
 });
 
 // -------------- ESERCIZIO 3 ------------------
