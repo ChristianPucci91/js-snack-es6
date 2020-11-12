@@ -20,12 +20,16 @@ const studente = {
 const {nome,cognome,eta} = studente;
 console.log(nome,cognome,eta);
 
+let ex1 = "";
+ex1 = ` <h3> Nome: ${nome} <br> Cognome : ${cognome} <br> Età : ${eta} </h3>`
+document.getElementById("ex_1").innerHTML = ex1;
+
 // -------------- ESERCIZIO 1 ------------------
 console.log("------------------------------------------");
 // -------------- ESERCIZIO 2 ------------------
 
 // creo array di oggetti
-const arrayStudenti = [
+var arrayStudenti = [
 
   {
     "nome": "Vincent",
@@ -47,10 +51,14 @@ const arrayStudenti = [
 
 ]; // fine array
 
-//Creo un forEach che cicli per ogni elemento dell'array e stampi solo la proprietà nome e cognome
+// --------- UPDATE 12/11/2020 stampo gli elementi dell'array usando map-----------
 
-arrayStudenti.forEach((element) => {
-  console.log(` nome: ${element.nome} cognome : ${element.cognome} `);
+var ex2 = "";
+
+arrayStudenti.map((element) => {
+  console.log(` nome: ${element.nome} cognome : ${element.cognome} eta : ${element.eta} `);
+  ex2 += ( ` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta} <br>` );
+  document.getElementById('ex_2').innerHTML = ex2;
 });
 
 // -------------- ESERCIZIO 2 ------------------
@@ -61,7 +69,7 @@ console.log("------------------------------------------");
 
 var nuovoNome = prompt("Inserisci il tuo nome");
 var nuovoCognome = prompt("Inserisci il tuo cognome");
-var nuovoEta = prompt("Inserisci la tua età");
+var nuovoEta = parseInt(prompt("Inserisci la tua età"));
 
 const inserisciStudente = {
 
@@ -71,8 +79,15 @@ const inserisciStudente = {
 
 };
 
+// --------- UPDATE 12/11/2020 dichiaro un let unendo i 2 array e stamparli con un for each-----------
+arrayStudenti = [...arrayStudenti,{...inserisciStudente}];
+// console.log(arrayStudenti);
+var ex3 = "";
+// stampo in html con un foureach
 arrayStudenti.forEach((element) => {
   console.log(` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta}`);
+  document.getElementById('ex_3').innerHTML = ex3;
+  ex3 += ( ` nome: ${element.nome} cognome : ${element.cognome} età : ${element.eta} <br>` + `${nuovoNome}`   );
 });
 
 // -------------- ESERCIZIO 3 ------------------
