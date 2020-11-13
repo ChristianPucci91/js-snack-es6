@@ -10,13 +10,13 @@ const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
 const arrayUtente = []; // array inserimento dati utente
 
 // primo numero inserito da utente
-let numeroUno = parseInt(prompt("inserisci un numero tra 0 e " + (myArray.length - 1)));
+var numeroUno = parseInt(prompt("inserisci un numero tra 0 e " + (myArray.length - 1)));
 //caso limite
 while ((isNaN(numeroUno)) || (numeroUno < 0) || (numeroUno > (myArray.length - 1))) {
   numeroUno = parseInt(prompt("Per favore,inserisci un numero tra 0 e " + (myArray.length - 1)));
 }
 //secondo numero inserito da utente
-let numeroDue = parseInt(prompt("inserisci un secondo numero tra 0 e " + (myArray.length - 1)));
+var numeroDue = parseInt(prompt("inserisci un secondo numero tra 0 e " + (myArray.length - 1)));
 //caso limite
 while ((isNaN(numeroDue)) || (numeroDue < 0) || (numeroDue > (myArray.length - 1))) {
   numeroDue = parseInt(prompt("Per favore,inserisci un numero tra 0 e " + (myArray.length - 1)));
@@ -25,8 +25,7 @@ while ((isNaN(numeroDue)) || (numeroDue < 0) || (numeroDue > (myArray.length - 1
 
 // --------------------- UPDATE 12/11/2020 utilizzo di una funzione anonima all'interno di un evento click.
 
-document.getElementById('button').addEventListener('click',
-() => {
+document.getElementById('button').addEventListener('click', () => {
 
   if (numeroDue < numeroUno) { // caso limite n.2
     // ciclo for dove pusho gli elementi dell'array scelti dall'utente nel caso l'utente inserisca il secondo numero minore del primo
@@ -40,7 +39,11 @@ document.getElementById('button').addEventListener('click',
   }// fine condizione if
   document.getElementById('stampa').innerHTML = "Il risultato del tuo array è: " + arrayUtente;
   console.log("Il risultato del tuo array è: ", arrayUtente);
-  return arrayUtente
 });
 
+///////// QUESTO SI POTEVA SCRIVERE COSI //////////
+// const newArray = myarray.filter((element,index) => {
+//
+//   return (index >= numeroUno) && (index <= numeroDue)
+// });
 //----------------------- FINE JSNACK 2 es6 ---------------------
