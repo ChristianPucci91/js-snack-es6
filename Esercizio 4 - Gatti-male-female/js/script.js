@@ -1,10 +1,5 @@
-/*
-icone:
-<i class="fas fa-cat" style="color:......"></i>
- <i class="fas fa-ribbon" style="color:.....; filter: opacity(....);"> </i>
- nome gatto
-*/
-//abbiamo dei gattini
+
+//array di gatti
 const cats = [
   {
     name: 'Adam',
@@ -110,3 +105,42 @@ male.forEach((element) => {
 });
 
 document.getElementById('container_3').innerHTML = "<h3> Gatti Maschi</h3>" + containerTre;
+
+const arrayUnito = [...female,...male]
+
+var containerQuattro = "";
+
+arrayUnito.forEach((element) => {
+  containerQuattro += ` <div>
+      <i class="fas fa-cat" style="color:${element.color}"></i>
+      <i class="fas fa-ribbon" style="color:${element.ribbon.color}; filter: opacity(${element.ribbon.opacity}%);"> </i>
+      ${element.name}
+    </div> `
+});
+
+document.getElementById('container_4').innerHTML = "<h3> Tutti i gatti</h3>" + containerQuattro;
+
+//altro array con obj di soli ribbon and name [destructuring in map]
+const objArray = arrayUnito.map((element) =>{
+ const {name,ribbon} = element;
+ let myobj =  {
+    name,
+    ribbon
+  }
+  return myobj
+});
+
+console.log(objArray);
+
+
+// stampo l'array con soli nomi e ribbon
+var containerCinque = "";
+
+objArray.forEach((element) => {
+  containerCinque += ` <div>
+    <i class="fas fa-ribbon" style="color:${element.ribbon.color}; filter: opacity(${element.ribbon.opacity}%);"> </i>
+    ${element.name}
+    </div> `
+});
+
+document.getElementById('container_5').innerHTML = "<h3> Nome e ribbon</h3>" + containerCinque;
