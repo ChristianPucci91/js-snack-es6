@@ -69,3 +69,44 @@ var ribbon = cats.map((element) =>{
 });
 
 console.log(cats,ribbon); // stampo i 2 array per confrontarli
+
+// dividiamoli per sesso [2 nuovi array con filter]
+
+const female = ribbon.filter((element) => {
+  return (element.gender === "female")
+});
+console.log(female);
+const male = ribbon.filter((element) => {
+  return (element.gender === "male")
+});
+console.log(male);
+
+const stampaFemale = document.getElementById('container_2');
+const stampaMale = document.getElementById('container_3');
+
+
+let containerDue = "";
+
+// con un forEach stampo in html
+female.forEach((element) => {
+  containerDue += ` <div>
+      <i class="fas fa-cat" style="color:${element.color}"></i>
+      <i class="fas fa-ribbon" style="color:${element.ribbon.color}; filter: opacity(${element.ribbon.opacity}%);"> </i>
+      ${element.name}
+    </div> `
+});
+
+document.getElementById('container_2').innerHTML = "<h3> Gatti Femmine</h3>" + containerDue;
+
+let containerTre = "";
+
+// con un forEach stampo in html
+male.forEach((element) => {
+  containerTre += ` <div>
+      <i class="fas fa-cat" style="color:${element.color}"></i>
+      <i class="fas fa-ribbon" style="color:${element.ribbon.color}; filter: opacity(${element.ribbon.opacity}%);"> </i>
+      ${element.name}
+    </div> `
+});
+
+document.getElementById('container_3').innerHTML = "<h3> Gatti Maschi</h3>" + containerTre;
